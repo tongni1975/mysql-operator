@@ -35,6 +35,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
  * Add `InitContainers` and `Containers` in `.Spec.PodSpec` to allow the user specifying custom containers.
  * Add `MetricsExporterResources` and `MySQLOperatorSidecarResrouces` in `.Spec.PodSpec` to allow
    the user specifying resources for thos sidecars containers.
+ * Add command line flag to configure number of workers for orchestrator controller.
 ### Changed
  * [#422](https://github.com/presslabs/mysql-operator/pull/422) adds the `SidecarServerPort` to the
    `MasterService` and introduces one new service, HealthyReplicasService, so that we can try to
@@ -57,6 +58,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
  * Change default resource requests/limits for `sidecar` container: requested=10m/32Mi, limit=the same as `.spec.podSpec.resources.limit`
  * Change default resource requests/limits for `exporter` container: requested=10m/32Mi, limit=100m/128Mi
  * Change default resource requests/limits for `heartbeat` container: requested=10m/32Mi, limit=100m/64Mi
+ * Change the default number of workers for orchestrator controller from 1 to 10.
 ### Removed
 ### Fixed
  * Update and fix e2e tests
